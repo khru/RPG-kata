@@ -9,3 +9,7 @@ class Character:
             defending_character.health = 0
             defending_character.isAlive = False
 
+    def heal(self, defending_character, heal):
+        defending_character.health += heal
+
+

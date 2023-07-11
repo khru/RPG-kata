@@ -75,3 +75,16 @@ class TestChangeMe:
         assert defending_character.health == 0
         assert defending_character.isAlive == False
 
+    def test_character_can_heal_another_character(self):
+        # Given
+        defending_character = Character()
+        attacking_character = Character()
+        healing_character = Character()
+
+        # When
+        attacking_character.attack(defending_character, 100)
+        healing_character.heal(defending_character, 50)
+
+        # Then
+        assert defending_character.health == 950
+
