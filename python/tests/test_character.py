@@ -4,7 +4,7 @@ from src.character import Character
 class TestChangeMe:
 
     def test_character_creation(
-        self,
+            self,
     ):
         # Given
         character = Character()
@@ -16,7 +16,7 @@ class TestChangeMe:
         assert character.isAlive == True
 
     def test_character_can_deal_damage_to_other_character(
-        self,
+            self,
     ):
         # Given
         defending_character = Character()
@@ -48,3 +48,17 @@ class TestChangeMe:
         attacking_character.attack(defending_character, 200)
         # Then
         assert defending_character.health == 800
+
+    def test_character_can_kill_other_character(
+            self,
+    ):
+        # Given
+        defending_character = Character()
+        attacking_character = Character()
+
+        # When
+        attacking_character.attack(defending_character, 1000)
+
+        # Then
+        assert defending_character.health == 0
+        assert defending_character.isAlive == False
