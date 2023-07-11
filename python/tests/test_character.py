@@ -37,3 +37,14 @@ class TestChangeMe:
         attacking_character.attack(defending_character)
         # Then
         assert defending_character.health == 980
+
+    def test_character_can_attack_with_specific_damage(
+            self,
+    ):
+        # Given
+        defending_character = Character()
+        attacking_character = Character()
+        # When
+        attacking_character.attack(defending_character, 200)
+        # Then
+        assert defending_character.health == 800
