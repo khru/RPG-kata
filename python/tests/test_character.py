@@ -26,4 +26,14 @@ class TestChangeMe:
         # Then
         assert defending_character.health == 990
 
-
+    def test_character_can_attack_twice_to_other_character(
+            self,
+    ):
+        # Given
+        defending_character = Character()
+        attacking_character = Character()
+        # When
+        attacking_character.attack(defending_character)
+        attacking_character.attack(defending_character)
+        # Then
+        assert defending_character.health == 980

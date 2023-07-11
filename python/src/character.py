@@ -4,4 +4,4 @@ class Character:
     isAlive = True
 
     def attack(self, defending_character):
-        defending_character.health = 990
+        defending_character.health -= 10
