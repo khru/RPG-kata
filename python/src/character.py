@@ -5,6 +5,7 @@ class Character:
 
     def attack(self, defending_character, damage = 10):
         defending_character.health -= damage
-        if defending_character.health == 0:
+        if defending_character.health <= 0:
+            defending_character.health = 0
             defending_character.isAlive = False
 

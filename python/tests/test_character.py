@@ -62,3 +62,16 @@ class TestChangeMe:
         # Then
         assert defending_character.health == 0
         assert defending_character.isAlive == False
+
+    def test_character_can_not_have_negative_health(self):
+        # Given
+        defending_character = Character()
+        attacking_character = Character()
+
+        # When
+        attacking_character.attack(defending_character, 3000)
+
+        # Then
+        assert defending_character.health == 0
+        assert defending_character.isAlive == False
+
