@@ -14,3 +14,16 @@ class TestChangeMe:
         assert character.health == 1000
         assert character.level == 1
         assert character.isAlive == True
+
+    def test_character_can_deal_damage_to_other_character(
+        self,
+    ):
+        # Given
+        defending_character = Character()
+        attacking_character = Character()
+        # When
+        attacking_character.attack(defending_character)
+        # Then
+        assert defending_character.health == 990
+
+
